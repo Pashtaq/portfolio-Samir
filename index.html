@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mon Portfolio - Samir DZUDZEVIC</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #333;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 5px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #007bff;
+        }
+
+        /* Section Accueil */
+        .section-home {
+            background-image: url('https://www.weodeo.com/wp-content/uploads/2021/12/reseau-informatique-scaled-1.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .section-home h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .section-home p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Section À propos */
+        .section-about {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .section-about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .section-about p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Section CV */
+        .section-cv {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .section-cv h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .cv-details {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .cv-card {
+            width: 48%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cv-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .cv-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .cv-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cv-card ul li {
+            margin: 5px 0;
+        }
+
+        /* Style pour le bouton de téléchargement du CV */
+        .cv-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cv-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Section Projets */
+        .section-projects {
+            padding: 50px 0;
+            background-image: url('https://www.cogitis.fr/wp-content/uploads/2022/10/cybersecurity-web.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .section-projects h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .projects-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            width: 30%;
+            background-color: rgba(255, 255, 255, 0.8); /* semi-transparent background */
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Section Contact */
+        .section-contact {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .section-contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-contact label {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            align-self: flex-start;
+        }
+
+        .section-contact input, .section-contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .section-contact button {
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .section-contact button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section Accueil -->
+    <section id="home" class="section-home">
+        <div class="container">
+            <h1>Bienvenue sur mon portfolio</h1>
+            <p>Je suis un étudiant passionné par l'informatique, et je cherche à mettre en pratique mes compétences en développement et administration des systèmes.</p>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="about" class="section-about">
+        <div class="container">
+            <h2>À propos de moi</h2>
+            <p>Je m'appelle Samir DZUDZEVIC, j'ai 19 ans, et je suis actuellement étudiant en BTS Services Informatiques aux Organisations. Passionné par l'informatique, je cherche à approfondir mes compétences dans le domaine du développement et de l'administration des systèmes.</p>
+        </div>
+    </section>
+
+    <!-- Section CV -->
+    <section id="cv" class="section-cv">
+        <div class="container">
+            <h2>Mon CV</h2>
+            <div class="cv-details">
+                <div class="cv-card">
+                    <h3>Informations personnelles</h3>
+                    <ul>
+                        <li><strong>Nom :</strong> Samir DZUDZEVIC</li>
+                        <li><strong>Âge :</strong> 19 ans</li>
+                        <li><strong>Nationalité :</strong> Française</li>
+                        <li><strong>Permis B :</strong> En cours</li>
+                        <li><strong>Contact :</strong> 0771170326 | dzudzevicsamir2@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="cv-card">
+                    <h3>Formation</h3>
+                    <ul>
+                        <li><strong>Baccalauréat STMG :</strong> Lycée Jean Monnet, Strasbourg (spécialité Gestion Finance)</li>
+                        <li><strong>Brevet des Collèges :</strong> Lycée Jean Monnet, Strasbourg</li>
+                    </ul>
+                </div>
+                <div class="cv-card">
+                    <h3>Savoir-faire Informatique</h3>
+                    <ul>
+                        <li>Développement (Java, Python, HTML, CSS)</li>
+                        <li>Administration des systèmes et réseaux</li>
+                        <li>Gestion de projet informatique</li>
+                        <li>Certification Pix</li>
+                    </ul>
+                </div>
+                <div class="cv-card">
+                    <h3>Savoir-être</h3>
+                    <ul>
+                        <li>Organisé</li>
+                        <li>Leadership</li>
+                        <li>Autonome</li>
+                        <li>Rigoureux</li>
+                    </ul>
+                </div>
+                <div class="cv-card">
+                    <h3>Langues</h3>
+                    <ul>
+                        <li>Français : Langue maternelle</li>
+                        <li>Anglais : Niveau B1</li>
+                        <li>Espagnol : Niveau B1</li>
+                    </ul>
+                </div>
+                <div class="cv-card">
+                    <h3>Expérience Professionnelle</h3>
+                    <ul>
+                        <li><strong>Stagiaire dans un club de tennis</strong> (1 mois) - Lycée Jean Monnet, Strasbourg</li>
+                        <li>Encadrer de jeunes athlètes, planifier et diriger des séances d'entraînement.</li>
+                        <li>Renforcer l'esprit d'équipe, créer un environnement de motivation et de progression.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Bouton pour télécharger le CV -->
+            <a href="CV_Samir_DZUDZEVIC.pdf" class="cv-button" download>Télécharger mon CV</a>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="section-projects">
+        <div class="container">
+            <h2>Mes Projets</h2>
+            <div class="projects-list">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="Projet 1">
+                    <h3>Projet 1</h3>
+                    <p>Description de ton premier projet.</p>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Projet 2">
+                    <h3>Projet 2</h3>
+                    <p>Description de ton deuxième projet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section-contact">
+        <div class="container">
+            <h2>Contactez-moi</h2>
+            <form action="#" method="POST">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Samir DZUDZEVIC | Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
